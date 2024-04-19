@@ -6,6 +6,7 @@
 vim.env.GIT_PAGER = 'delta'
 vim.env.DELTA_THEME = 'dark'
 vim.g.autoformat = false
+vim.wo.relativenumber = true
 
 return {
   'github/copilot.vim',
