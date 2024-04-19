@@ -384,7 +384,7 @@ require('lazy').setup({
 
       -- Mine (vo1d)
       vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>sb', builtin.live_grep, { desc = '[S]earch [B]uffer' })
+      vim.keymap.set('n', '<leader>sa', builtin.live_grep, { desc = '[S]earch [B]uffer' })
       vim.keymap.set('n', '<leader>df', builtin.lsp_definitions, { desc = 'LSP [D]efinitions' })
       vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = '[L]azy [G]it' })
       vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[B]uffer [D]elete' })
@@ -392,10 +392,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', { desc = '[E]xplorer' })
       vim.keymap.set('n', '<leader>ob', builtin.buffers, { desc = '[O]pen [B]uffers' })
       vim.keymap.set('n', '<leader>nb', ':enew<CR>', { desc = '[N]ew [B]uffer' })
-      -- End mine (vo1d)
 
-      -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set('n', '<leader>/', function()
+      vim.keymap.set('n', '<leader>sb', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
@@ -403,9 +401,13 @@ require('lazy').setup({
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
 
+      -- End mine (vo1d)
+
+      -- Slightly advanced example of overriding default behavior and theme
+
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set('n', '<leader>s/', function()
+      vim.keymap.set('n', '<leader>/', function()
         builtin.live_grep {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
