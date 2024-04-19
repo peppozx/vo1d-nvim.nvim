@@ -2,4 +2,13 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+--
+vim.env.GIT_PAGER = 'delta'
+vim.env.DELTA_THEME = 'dark'
+vim.g.autoformat = false
+
+return {
+  'github/copilot.vim',
+  'kdheepak/lazygit.nvim',
+  { 'navarasu/onedark.nvim' },
+}
