@@ -190,8 +190,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Vo1d keymaps
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -390,6 +388,10 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>df', builtin.lsp_definitions, { desc = 'LSP [D]efinitions' })
       vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = '[L]azy [G]it' })
       vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[B]uffer [D]elete' })
+      vim.keymap.set('n', '<leader>ll', ':Lazy<CR>', { desc = '[L]azy [L]oad' })
+      vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', { desc = '[E]xplorer' })
+      vim.keymap.set('n', '<leader>ob', builtin.buffers, { desc = '[O]pen [B]uffers' })
+      vim.keymap.set('n', '<leader>nb', ':enew<CR>', { desc = '[N]ew [B]uffer' })
       -- End mine (vo1d)
 
       -- Slightly advanced example of overriding default behavior and theme
