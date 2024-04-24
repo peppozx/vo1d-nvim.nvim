@@ -389,9 +389,10 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = '[L]azy [G]it' })
       vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[B]uffer [D]elete' })
       vim.keymap.set('n', '<leader>ll', ':Lazy<CR>', { desc = '[L]azy [L]oad' })
-      vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', { desc = '[E]xplorer' })
-      vim.keymap.set('n', '<leader>ob', builtin.buffers, { desc = '[O]pen [B]uffers' })
-      vim.keymap.set('n', '<leader>nb', ':enew<CR>', { desc = '[N]ew [B]uffer' })
+      vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = '[E]xplorer' })
+      vim.keymap.set('n', '<leader>bo', builtin.buffers, { desc = '[O]pen [B]uffers' })
+      vim.keymap.set('n', '<leader>bn', ':enew<CR>', { desc = '[N]ew [B]uffer' })
+      vim.keymap.set('n', 'q', '<escape>', { desc = 'Quit' })
 
       vim.keymap.set('n', '<leader>sb', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -404,7 +405,6 @@ require('lazy').setup({
       -- End mine (vo1d)
 
       -- Slightly advanced example of overriding default behavior and theme
-
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set('n', '<leader>/', function()
@@ -771,7 +771,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'onedark'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -814,7 +814,6 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
@@ -864,7 +863,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

@@ -10,7 +10,6 @@ vim.g.autoformat = false
 vim.wo.relativenumber = true
 
 return {
-  'preservim/nerdtree',
   'github/copilot.vim',
   'kdheepak/lazygit.nvim',
   { 'navarasu/onedark.nvim' },
