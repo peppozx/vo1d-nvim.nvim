@@ -10,7 +10,15 @@ vim.g.autoformat = false
 vim.wo.relativenumber = true
 
 return {
+  'craftzdog/solarized-osaka.nvim',
   'github/copilot.vim',
   'kdheepak/lazygit.nvim',
   { 'navarasu/onedark.nvim' },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      icons = false
+    }
+  }
 }

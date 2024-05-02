@@ -392,6 +392,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = '[E]xplorer' })
       vim.keymap.set('n', '<leader>bo', builtin.buffers, { desc = '[O]pen [B]uffers' })
       vim.keymap.set('n', '<leader>bn', ':enew<CR>', { desc = '[N]ew [B]uffer' })
+      vim.keymap.set('n', '<leader>cd', builtin.diagnostics, { desc = 'LSP [D]iagnostics' })
+      vim.keymap.set('n', '<leader>xx', ':TroubleToggle<CR>', { desc = '[X]X [T]rouble' })
       vim.keymap.set('n', 'q', '<escape>', { desc = 'Quit' })
 
       vim.keymap.set('n', '<leader>sb', function()
@@ -632,7 +634,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>cf',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
@@ -771,7 +773,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'solarized-osaka'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
