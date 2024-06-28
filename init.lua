@@ -383,6 +383,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 
       -- Mine (vo1d)
+      vim.g.blamer_enabled = 1
+
       vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sa', builtin.live_grep, { desc = '[S]earch [B]uffer' })
       vim.keymap.set('n', '<leader>df', builtin.lsp_definitions, { desc = 'LSP [D]efinitions' })
@@ -393,7 +395,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>bo', builtin.buffers, { desc = '[O]pen [B]uffers' })
       vim.keymap.set('n', '<leader>bn', ':enew<CR>', { desc = '[N]ew [B]uffer' })
       vim.keymap.set('n', '<leader>cd', builtin.diagnostics, { desc = 'LSP [D]iagnostics' })
-      vim.keymap.set('n', '<leader>xx', ':TroubleToggle<CR>', { desc = '[X]X [T]rouble' })
       vim.keymap.set('n', 'q', '<escape>', { desc = 'Quit' })
 
       vim.keymap.set('n', '<leader>sb', function()
