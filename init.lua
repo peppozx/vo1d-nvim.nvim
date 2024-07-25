@@ -84,6 +84,17 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argv(0) == "." then
+      require("telescope.builtin").find_files()
+    end
+  end,
+})
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -359,6 +370,9 @@ require('lazy').setup({
         -- },
         -- pickers = {}
         extensions = {
+          ['file_browser'] = {
+            hijack_netrw = true,
+          },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
